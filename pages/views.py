@@ -2,11 +2,16 @@
   All app views.
 """
 
-# from django.shortcuts import render
-from django.http import HttpResponse
+from django.shortcuts import render
 
 def index(request):
     """
       Test func.
     """
-    return HttpResponse('<h1>Hello World</h1>')
+    return render(request, 'pages/index.html')
+
+def about(request):
+    """
+      Test func.
+    """
+    return render(request, 'pages/about.html')
