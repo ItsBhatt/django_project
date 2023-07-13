@@ -15,3 +15,15 @@ def about(request):
       Test func.
     """
     return render(request, 'pages/about.html')
+
+def login(request):
+    """
+      Test func.
+    """
+    return render(request, 'pages/login.html')
+
+def register(request):
+    """
+      Test func.
+    """
+    return render(request, 'pages/register.html')
