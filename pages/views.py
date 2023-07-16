@@ -3,18 +3,38 @@
 """
 
 from django.shortcuts import render
+from listings.models import Listing
+from realtors.models import Realtor
 
 def index(request):
     """
       Test func.
     """
-    return render(request, 'pages/index.html')
+    listings = Listing.objects.order_by('-list_date').filter(is_published = True)[:3]
+    context = {
+        'listings': listings
+    }
+
+    return render(request, 'pages/index.html', context)
 
 def about(request):
     """
       Test func.
     """
-    return render(request, 'pages/about.html')
+    realtors = Realtor.objects.order_by('hire_date').all()
+    mvp = {}
+
+    for realtor in realtors:
+        if realtor.is_mvp:
+            mvp = realtor
+            break
+
+    context = {
+        'realtors': realtors,
+        'mvp': mvp,
+    }
+
+    return render(request, 'pages/about.html', context)
 
 def login(request):
     """
