@@ -1,0 +1,20 @@
+#header {
+  height: 50px;
+  background: #10284e;
+  color: #fff;
+}
+
+#header h1 {
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: 4px;
+  align-items: center;
+}
+
+div.breadcrumbs a:link, div.breadcrumbs a:visited {
+  color: #10284e;
+}
+
+a:hover {
+  cursor: pointer;
+}
